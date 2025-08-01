@@ -18,10 +18,10 @@ jobs:
       run: ./scripts/ci-install.sh
 
     - name: Test
-      run: ./scripts/ci-build.sh 2>&1
+      run: make
 
     - name: Upload micro-controller data dictionaries
       uses: actions/upload-artifact@v4
       with:
-        name: data-dict
-        path: ci_build/dict
+        name: klipper.bin
+        path: out
